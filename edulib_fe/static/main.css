@@ -1,0 +1,32 @@
+.transition {
+    transition: 0.5s ease-in-out;
+}
+
+.out {
+    position: fixed;
+    right: -100%;
+    top: 50px;
+}
+
+.in {
+    position: fixed;
+    right: 20px;
+    top: 50px;
+}
+
+.book-card {
+    /* Gaya bayangan yang lebih halus dan terangkat */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Tambahkan sedikit border */
+}
+/* Efek hover untuk gambar */
+.book-card img {
+    transition: transform 0.3s ease-in-out;
+}
+.book-card:hover img {
+    transform: scale(1.03); /* Sedikit zoom pada gambar saat hover */
+}
+/* Efek overlay yang lebih dinamis */
+.book-card .image-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+}

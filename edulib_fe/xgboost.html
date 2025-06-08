@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Penjelasan Sederhana XGBoost</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    svg {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+    .box {
+      fill: lightblue;
+      stroke: #333;
+      stroke-width: 2px;
+      rx: 10;
+      ry: 10;
+    }
+    .text {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .arrow {
+      stroke: black;
+      stroke-width: 2px;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+</head>
+<body>
+  <h2>Visualisasi Proses XGBoost</h2>
+  <p id="caption">Langkah 1: Model pertama membuat prediksi awal.</p>
+  <svg width="800" height="300"></svg>
+
+  <script>
+    const svg = d3.select("svg");
+
+    // Tambah panah untuk link antar langkah
+    svg.append("defs").append("marker")
+      .attr("id", "arrowhead")
+      .attr("viewBox", "-0 -5 10 10")
+      .attr("refX", 15)
+      .attr("refY", 0)
+      .attr("orient", "auto")
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .attr("xoverflow", "visible")
+      .append("svg:path")
+      .attr("d", "M 0,-5 L 10 ,0 L 0,5")
+      .attr("fill", "black");
+
+    const steps = [
+      {
+        x: 50,
+        text: "Tree 1:\nPrediksi Awal",
+        caption: "Langkah 1: Model pertama membuat prediksi awal."
+      },
+      {
+        x: 250,
+        text: "Error:\nMasih banyak kesalahan",
+        caption: "Langkah 2: Ditemukan error dari prediksi awal.",
+        color: "#ff9999"
+      },
+      {
+        x: 450,
+        text: "Tree 2:\nMemperbaiki error",
+        caption: "Langkah 3: Pohon kedua belajar dari error tadi.",
+        color: "#add8e6"
+      },
+      {
+        x: 650,
+        text: "Gabungan:\nPrediksi Lebih Akurat",
+        caption: "Langkah 4: Gabungan pohon 1 + 2 = hasil akhir yang lebih baik.",
+        color: "#90ee90"
+      }
+    ];
+
+    let i = 0;
+    function showStep() {
+      if (i >= steps.length) return;
+
+      const step = steps[i];
+      const color = step.color || "lightblue";
+
+      // Tambah kotak
+      svg.append("rect")
+        .attr("x", step.x)
+        .attr("y", 100)
+        .attr("width", 140)
+        .attr("height", 80)
+        .attr("class", "box")
+        .attr("fill", color)
+        .style("opacity", 0)
+        .transition()
+        .duration(500)
+        .style("opacity", 1);
+
+      // Tambah teks
+      svg.append("text")
+        .attr("x", step.x + 70)
+        .attr("y", 140)
+        .attr("class", "text")
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .text(step.text)
+        .style("opacity", 0)
+        .transition()
+        .duration(500)
+        .style("opacity", 1);
+
+      // Tambah panah ke langkah berikutnya (kecuali langkah terakhir)
+      if (i < steps.length - 1) {
+        svg.append("line")
+          .attr("x1", step.x + 140)
+          .attr("y1", 140)
+          .attr("x2", step.x + 160)
+          .attr("y2", 140)
+          .attr("class", "arrow")
+          .style("opacity", 0)
+          .transition()
+          .delay(500)
+          .duration(500)
+          .style("opacity", 1);
+      }
+
+      // Update teks narasi
+      document.getElementById("caption").textContent = step.caption;
+
+      i++;
+      setTimeout(showStep, 2500); // Lanjutkan ke langkah berikutnya
+    }
+
+    showStep();
+  </script>
+</body>
+</html>

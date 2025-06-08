@@ -1,0 +1,265 @@
+/* pustakawan_style.css */
+
+/* --- Variabel & Gaya Dasar --- */
+:root {
+    --pustaka-primary: #C0392B; /* Merah yang lebih modern dari #b23b3b */
+    --pustaka-primary-dark: #A93226;
+    --pustaka-bg: #F9F9F9;
+    --pustaka-card-bg: #FFFFFF;
+    --pustaka-font-dark: #2C3E50;
+    --pustaka-font-light: #808B96;
+    --pustaka-border: #EAEDED;
+    --pustaka-success: #27AE60;
+    --pustaka-danger: #E74C3C;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--pustaka-bg);
+    color: var(--pustaka-font-dark);
+    overflow-y: hidden;
+}
+
+/* --- Layout Utama --- */
+.container-p {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--pustaka-primary);
+    color: white;
+    height: 100vh;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2rem 3rem;
+    height: 100vh;
+    overflow-y:scroll;
+}
+
+/* --- Komponen Sidebar --- */
+.sidebar h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+.sidebar-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.sidebar-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+.sidebar-nav a.active {
+    background-color: var(--pustaka-card-bg);
+    color: var(--pustaka-primary);
+    font-weight: 700;
+}
+.logout-btn {
+    margin-top: auto;
+    background-color: rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.logout-btn:hover { background-color: rgba(0,0,0,0.4); }
+
+/* --- Komponen Konten --- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.page-header h1 {
+    font-size: 2.25rem;
+    color: var(--pustaka-font-dark);
+}
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.btn-primary { background-color: var(--pustaka-primary); color: white; }
+.btn-primary:hover { background-color: var(--pustaka-primary-dark); transform: translateY(-2px); }
+.btn-secondary { background-color: #BDC3C7; color: var(--pustaka-font-dark); }
+.btn-danger { background-color: var(--pustaka-danger); color: white; }
+
+/* Tabel */
+.content-card {
+    background-color: var(--pustaka-card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--pustaka-border);
+}
+thead th {
+    background-color: #F8F9F9;
+    font-weight: 600;
+    color: var(--pustaka-font-light);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+tbody tr:hover { background-color: #FDFEFE; }
+.action-buttons { display: flex; gap: 0.5rem; }
+
+/* Form */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+.form-group { margin-bottom: 1rem; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--pustaka-border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--pustaka-primary);
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+.form-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--pustaka-border);
+    padding-top: 2rem;
+}
+
+/* Alert */
+.alert {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+.alert-success {
+    background-color: #E8F8F5;
+    border-color: #A3E4D7;
+    color: #117A65;
+}
+.alert-error {
+    background-color: #FDEBD0;
+    border-color: #F5CBA7;
+    color: #AF601A;
+}
+
+/* Tambahkan kode ini ke bagian akhir file pustakawan_style.css Anda */
+
+/* --- Status Badges --- */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px; /* Pill shape */
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+    white-space: nowrap;
+}
+.status-menunggu { background-color: #FEF3C7; color: #9A3412; }
+.status-dipinjam { background-color: #D1FAE5; color: #065F46; }
+.status-dikembalikan { background-color: #E5E7EB; color: #374151; }
+.status-ditolak { background-color: #FEE2E2; color: #991B1B; }
+.status-terlambat { background-color: #F87171; color: #7f1d1d; }
+
+/* Tombol Aksi yang Dinonaktifkan */
+.btn:disabled {
+    background-color: #D1D5DB;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- Modal --- */
+.modal {
+    display: none; /* Default tersembunyi */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background: var(--pustaka-card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--pustaka-border);
+    margin-bottom: 1.5rem;
+}
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--pustaka-font-light);
+    cursor: pointer;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--pustaka-border);
+}
