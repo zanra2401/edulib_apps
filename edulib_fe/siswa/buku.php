@@ -124,7 +124,7 @@
     <script>
         function logOut() {
             $.ajax({
-                url: "http://localhost:8080/edulib/auth/logout",
+                url: "http://localhost:9191/edulib/auth/logout",
                 type: "get",
                 xhrFields: {
                     withCredentials: true
@@ -168,7 +168,7 @@
             const penulis = Array.from(selectedPenulis);
 
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/search",
+                url: "http://localhost:9191/edulib/buku/search",
                 type: "post",
                 xhrFields: {
                     withCredentials: true,
@@ -183,7 +183,7 @@
                     let bukus = ``;
 
                     response.buku.body.buku.forEach((el) => {
-                        let pathGambar = el.pathGambar ? `http://localhost:8080/gambar/buku/${el.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
+                        let pathGambar = el.pathGambar ? `http://localhost:9191/gambar/buku/${el.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
 
                         bukus += `
                             <div class="p-2 buku-container-1" >
@@ -226,7 +226,7 @@
         function pinjamBuku(target) {
             console.log(target.getAttribute("data-id-buku"));
             $.ajax({
-                url: `http://localhost:8080/edulib/buku/pinjam/${target.getAttribute("data-id-buku")}`,
+                url: `http://localhost:9191/edulib/buku/pinjam/${target.getAttribute("data-id-buku")}`,
                 type: "get",
                 xhrFields: {
                     withCredentials: true,
@@ -249,7 +249,7 @@
     <script>
         $("document").ready(() => {
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/getKP",
+                url: "http://localhost:9191/edulib/buku/getKP",
                 type: "get",
                 xhrFields: {
                     withCredentials: true
@@ -267,7 +267,7 @@
                 }
             })
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/buku",
+                url: "http://localhost:9191/edulib/buku/buku",
                 type: "get",
                 xhrFields: {
                     withCredentials: true,
@@ -276,7 +276,7 @@
                     let bukus = ``;
 
                     response.buku.content.forEach((el) => {
-                        let pathGambar = el.pathGambar ? `http://localhost:8080/gambar/buku/${el.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
+                        let pathGambar = el.pathGambar ? `http://localhost:9191/gambar/buku/${el.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
 
                         bukus += `
                             <div class="p-2 buku-container-1" >

@@ -166,7 +166,7 @@
 
         function save() {
             $.ajax({
-                url: `http://localhost:8080/edulib/user/editnama`,
+                url: `http://localhost:9191/edulib/user/editnama`,
                 type: "post",
                 contentType: "application/json",
                 xhrFields: {
@@ -202,7 +202,7 @@
 
         function showBuku(bukus) {
             bukus.forEach(element => {
-                let pathGambar = element.pathGambar ? `http://localhost:8080/gambar/buku/${element.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
+                let pathGambar = element.pathGambar ? `http://localhost:9191/gambar/buku/${element.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
 
                 $(`<div class="card">
                     <div class="card-body d-flex gap-2 p-0">
@@ -225,7 +225,7 @@
 
     <script>
         $.ajax({
-            url: "http://localhost:8080/edulib/user/user-login",
+            url: "http://localhost:9191/edulib/user/user-login",
             type: "get",
             xhrFields: {
                 withCredentials: true
@@ -238,7 +238,7 @@
         })
         $("document").ready(() => {
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/data-user",
+                url: "http://localhost:9191/edulib/buku/data-user",
                 type: "get",
                 contentType: "application/json",
                 xhrFields: {
@@ -257,7 +257,7 @@
             });
 
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/diajukan",
+                url: "http://localhost:9191/edulib/buku/diajukan",
                 type: "get",
                 xhrFields: {
                     withCredentials: true

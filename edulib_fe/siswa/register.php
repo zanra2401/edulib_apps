@@ -92,7 +92,7 @@
             $("#daftar").click(() => {
                 spinButton();
                 $.ajax({
-                    url: "http://localhost:8080/edulib/auth/siswa/register",
+                    url: "http://localhost:9191/edulib/auth/siswa/register",
                     type: "POST",
                     contentType: "application/json",
                     data: JSON.stringify({

@@ -88,7 +88,7 @@
             $("#login").click(() => {
                 spinButton();
                 $.ajax({
-                    url: "http://localhost:8080/edulib/auth/login",
+                    url: "http://localhost:9191/edulib/auth/login",
                     type: "POST",
                     xhrFields: {
                         withCredentials: true

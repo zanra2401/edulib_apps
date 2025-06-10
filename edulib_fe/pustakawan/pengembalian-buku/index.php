@@ -106,7 +106,7 @@
 
     <script>
     $(document).ready(function() {
-        const API_BASE_URL = "http://localhost:8080/edulib/buku";
+        const API_BASE_URL = "http://localhost:9191/edulib/buku";
 
         // --- FUNGSI-FUNGSI HELPER UNTUK KEBERSIHAN KODE ---
 
@@ -244,7 +244,7 @@
         // Logout
         $('#logout').on('click', function() {
             $.ajax({
-                url: "http://localhost:8080/edulib/auth/logout",
+                url: "http://localhost:9191/edulib/auth/logout",
                 type: "get",
                 xhrFields: { withCredentials: true }
             })

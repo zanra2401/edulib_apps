@@ -107,7 +107,7 @@
     <script>
         function logOut() {
             $.ajax({
-                url: "http://localhost:8080/edulib/auth/logout",
+                url: "http://localhost:9191/edulib/auth/logout",
                 type: "get",
                 xhrFields: {
                     withCredentials: true
@@ -120,7 +120,7 @@
         function showBuku(bukus) {
             console.log(bukus)
             bukus.forEach(element => {
-                let pathGambar = element.pathGambar ? `http://localhost:8080/gambar/buku/${element.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
+                let pathGambar = element.pathGambar ? `http://localhost:9191/gambar/buku/${element.pathGambar}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
 
                 $(`<div class="card">
                     <div class="card-body d-flex p-0">
@@ -143,7 +143,7 @@
     <script>
         $("document").ready(() => {
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/denda",
+                url: "http://localhost:9191/edulib/buku/denda",
                 type: "get",
                 xhrFields: {
                     withCredentials: true,

@@ -211,7 +211,7 @@
     <!-- === [ BAGIAN JAVASCRIPT LENGKAP ] === -->
     <script>
         $(document).ready(function() {
-            const API_BASE_URL = "http://localhost:8080/edulib";
+            const API_BASE_URL = "http://localhost:9191/edulib";
 
             function showToast(message, type = 'error') {
                 // Hapus toast lama jika ada

@@ -94,8 +94,8 @@ $id_buku = $_GET['id'];
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function() {
-            const API_BASE_URL = "http://localhost:8080/edulib/buku"; // Sesuaikan dengan API Anda
-            const IMAGE_BASE_URL = "http://localhost:8080/api/v1/images/"; // Sesuaikan dengan path gambar Anda
+            const API_BASE_URL = "http://localhost:9191/edulib/buku"; // Sesuaikan dengan API Anda
+            const IMAGE_BASE_URL = "http://localhost:9191/api/v1/images/"; // Sesuaikan dengan path gambar Anda
             const bookId = $('#idBuku').val();
 
             function loadBookData() {
@@ -159,7 +159,7 @@ $id_buku = $_GET['id'];
             
             $('#logout').on('click', function() {
                  $.ajax({
-                    url: "http://localhost:8080/edulib/auth/logout", // Sesuaikan dengan API Anda
+                    url: "http://localhost:9191/edulib/auth/logout", // Sesuaikan dengan API Anda
                     type: "get",
                     xhrFields: { withCredentials: true },
                     success: function () {

@@ -391,7 +391,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         $(document).ready(function() {
-    const API_BASE_URL = "http://localhost:8080/edulib";
+    const API_BASE_URL = "http://localhost:9191/edulib";
     let dendaChart = null;
 
     // --- UTILITIES ---

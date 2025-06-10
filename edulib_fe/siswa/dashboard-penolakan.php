@@ -159,7 +159,7 @@
     <script>
         function logOut() {
             $.ajax({
-                url: "http://localhost:8080/edulib/auth/logout",
+                url: "http://localhost:9191/edulib/auth/logout",
                 type: "get",
                 xhrFields: {
                     withCredentials: true
@@ -197,7 +197,7 @@
 
         function showBuku(bukus) {
             bukus.forEach(element => {
-                let pathGambar = element[3] ? `http://localhost:8080/gambar/buku/${element[3]}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
+                let pathGambar = element[3] ? `http://localhost:9191/gambar/buku/${element[3]}` : 'https://placehold.co/80x120/e0e0e0/757575?text=No+Image';
                 console.log(element);
                 $(`<div class="card">
                     <div class="card-body d-flex p-0 gap-2">
@@ -223,7 +223,7 @@
     <script>
 
         $.ajax({
-            url: "http://localhost:8080/edulib/user/user-login",
+            url: "http://localhost:9191/edulib/user/user-login",
             type: "get",
             xhrFields: {
                 withCredentials: true
@@ -237,7 +237,7 @@
 
         function save() {
             $.ajax({
-                url: `http://localhost:8080/edulib/user/editnama`,
+                url: `http://localhost:9191/edulib/user/editnama`,
                 type: "post",
                 contentType: "application/json",
                 xhrFields: {
@@ -253,7 +253,7 @@
 
         $("document").ready(() => {
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/data-user",
+                url: "http://localhost:9191/edulib/buku/data-user",
                 type: "get",
                 contentType: "application/json",
                 xhrFields: {
@@ -272,7 +272,7 @@
             });
 
             $.ajax({
-                url: "http://localhost:8080/edulib/buku/penolakan",
+                url: "http://localhost:9191/edulib/buku/penolakan",
                 type: "get",
                 xhrFields: {
                     withCredentials: true

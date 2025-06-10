@@ -35,11 +35,9 @@ INSERT INTO `detail_peminjaman` (`id_buku`, `id_detail`, `id_peminjaman`, `statu
 INSERT INTO `pengembalian` (`id_detail`, `id_pengembalian`, `tanggal_kembali`, `status_denda`) VALUES
 	(2, 1, '2025-05-30', 'dibayar');
 
-
 -- Denda keterlambatan
 INSERT INTO `denda` (`id_denda`, `id_pengembalian`, `jumlah_hari_terlambat`, `total_nominal`) VALUES
 	(1, 1, 2, 2000.00);
-
 
 -- Notifikasi (beragam jenis)
 INSERT INTO `notifikasi` (`id_detail`, `id_notifikasi`, `id_user`, `tanggal_kirim`, `isi_pesan`, `jenis_notifikasi`) VALUES

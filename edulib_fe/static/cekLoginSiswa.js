@@ -1,5 +1,5 @@
 $.ajax({
-     url: "http://localhost:8080/edulib/auth/logedin",
+     url: "http://localhost:9191/edulib/auth/logedin",
      type: "get",
      xhrFields: {
         withCredentials: true
@@ -15,16 +15,3 @@ $.ajax({
          }
      }
 });
-
-function logOut() {
-   $.ajax({
-      url: "http://localhost:8282/edulib/auth/logout",
-      type: "get",
-      xhrFields: {
-         withCredentials: true
-      },
-      success: function () {
-         console.log("ok");
-      }
-   });
-}

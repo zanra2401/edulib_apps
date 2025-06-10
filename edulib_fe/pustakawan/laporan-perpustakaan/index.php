@@ -188,7 +188,7 @@ require_once("../../config/global.php");
     <!-- === [ BAGIAN JAVASCRIPT LENGKAP ] === -->
     <script>
     $(document).ready(function() {
-        const API_BASE_URL = "http://localhost:8080/edulib/buku";
+        const API_BASE_URL = "http://localhost:9191/edulib/buku";
         let peminjamanChart = null;
         let populerChart = null;
 

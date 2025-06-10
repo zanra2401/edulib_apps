@@ -167,7 +167,7 @@
     
     <script>
         $(document).ready(function() {
-            const API_BASE_URL = "http://localhost:8080/edulib";
+            const API_BASE_URL = "http://localhost:9191/edulib";
             let peminjamanChart = null;
             let populerChart = null;
 

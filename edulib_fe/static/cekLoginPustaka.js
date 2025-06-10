@@ -1,5 +1,5 @@
 $.ajax({
-     url: "http://localhost:8080/edulib/auth/logedin-pustaka",
+     url: "http://localhost:9191/edulib/auth/logedin-pustaka",
      type: "get",
      xhrFields: {
         withCredentials: true
